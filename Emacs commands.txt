@@ -1,0 +1,85 @@
+C: Control (based on basic units independent of editing)
+M: Meta/Alt (based units defined by language)
+
+EMACS Commands:
+C-g		Quit command
+C=x 1		Kill 1 window (# dictates number of windows)
+C-<SPC>		Set mark for command
+C-x		Character eXtend
+M-x		Command eXtend
+C-z		Suspend Emacs
+<ESC> <ESC> <ESC>	Ultimate "get out" command
+C-h c		Get brief summary from Emacs
+C-h k		Get detailed summary from Emacs
+C-h x		Describe command in entirety from Emacs
+C-h a		Command Apropos: list all commands that contain keyword
+C-h r		Emacs manual
+M-x list-packages	List/install packages
+
+File commands:
+C-x C-f		Find file
+C-x C-s		Save file
+C-x C-b		List buffers
+
+Screenfuls:
+C-v		Move forward one screenful
+M-v		Move backward one screenful
+C-l		Clear screen and redisplay all the text, moving the text around the cursor to the center of the screen.(That's CONTROL-L, not CONTROL-1.)
+
+Cursor commands:
+C-p		Previous line
+C-n		Next line
+C-b		Backwards a character
+C-f		Forward a character
+M-f             Forward a word
+M-b 		Back a word.
+C-a		Beginning of line
+C-e		End of line
+M-a		Beginning of sentence
+M-e		End of sentence
+M-<		Beginning of whole text (Meta-Shift-Comma)
+M->		Beginning of whole text (Meta-Shift-Period)
+C-u		Amount of times to execute command (ex. C-u 8 C-f moves cursor 8 characters)
+
+Delete commands:
+<DEL>        	Delete the character just before the cursor
+C-d   	    	Delete the next character after the cursor
+
+Kill/Yank commands:
+M-<DEL>      	Kill the word immediately before the cursor
+M-d	     	Kill the next word after the cursor
+C-k	     	Kill from the cursor position to end of line
+M-k	     	Kill to the end of the current sentence
+C-y		Yank text back
+M-y		Replace with current text with previous kill
+C-w		Cut text
+M-w		Copy text
+C-y		Paste text
+
+Search commands:
+C-s		Forward search
+C-r		Reverse search
+
+C-x commands:
+C-/		Undo
+C-_		Undo
+C-x u		Undo
+C-x C-f		Find file
+C-x C-s		Save buffer to file
+C-x s		Save some buffers to their files
+C-x C-b		List buffers
+C-x b		Switch buffer
+C-x C-c		Quit Emacs
+C-x 1		Delete all but one window
+C-x u		Undo
+
+Multiple windows commands:
+C-x 2		Splits screen into two windows
+C-M-v		Scroll opposite window
+C-x o		Move cursor to opposite window
+C-x 4 C-f <name>	Open buffer with named file
+C-x 5 2		Open window of same file
+
+Recover Files:
+M-x recover-this-file <Return>
+
