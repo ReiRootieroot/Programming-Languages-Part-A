@@ -193,3 +193,86 @@ fun oldest (date_list : (int*int*int) list) =
     in
 	SOME (get_oldest date_list)
     end
+
+(*PROBLEM 12- CHALLENGE PROBLEM*)
+fun numbers_in_months_challenge (zs : (int*int*int) list, month_list : int list) =
+    let fun remove_duplicate (ys : int list, final_list : int list) =
+	    if null ys
+	    then final_list
+	    else
+		let fun remove_one_month (ws : int list, month : int) =
+		    if null ws
+		    then ws
+		    else
+			if (hd ws) = month
+			then remove_one_month (tl ws, month)
+			else (hd ws):: remove_one_month (tl ws, month)
+	    in
+		remove_duplicate(remove_one_month ((tl ys), (hd ys)), (hd ys) :: final_list)
+	    end
+    in
+	 number_in_months(zs, remove_duplicate (month_list, []))
+    end
+
+fun dates_in_months_challenge (zs : (int*int*int) list, month_list : int list) =
+    let fun reverse_order (vs : (int*int*int) list, list_counter :  (int*int*int) list) =
+	    if null vs
+	    then list_counter
+	    else reverse_order((tl vs), (hd vs) :: list_counter)
+
+
+
+	fun remove_duplicate (ys : int list, final_list : int list) =
+	    if null ys
+	    then final_list
+	    else
+		let fun remove_one_month (ws : int list, month : int) =
+		    if null ws
+		    then ws
+		    else
+			if (hd ws) = month
+			then remove_one_month (tl ws, month)
+			else (hd ws):: remove_one_month (tl ws, month)
+	    in
+		remove_duplicate(remove_one_month ((tl ys), (hd ys)), (hd ys) :: final_list)
+	    end
+    in
+	reverse_order(dates_in_months(zs, remove_duplicate (month_list, [])), [])
+    end
+
+(*PROBLEM 13*)
+fun reasonable_date (date : int*int*int) =	
+    let
+	fun valid_year () =
+	    1 <= (#1 date)
+	fun valid_month () =
+	    1 <= (#2 date) andalso (#2 date) <= 12
+	val thirty_days  = [4,6,9,11]
+	fun valid_day () =
+	    let
+		fun total_days (month : int) =
+		    if not (month = 2)
+		    then
+			let
+			    fun get_days_bool (month : int, xs : int list) =
+				if not(null xs)
+				then
+				    if month = hd(xs)
+				    then true
+				    else get_days_bool (month, (tl xs))
+				else false
+			in
+			    if get_days_bool(month, thirty_days)
+			    then 30
+			    else 31
+			end
+		    else
+			if (#1 date) mod 400 = 0
+			then 29
+			else 28
+	    in
+		1 <= (#3 date) andalso (#3 date) <= total_days(#2 date)
+	    end
+    in
+	valid_year() andalso valid_month() andalso valid_day()
+    end
