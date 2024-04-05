@@ -1,0 +1,706 @@
+Standard ML of New Jersey v110.80 [built: Thu Aug 18 15:00:00 2016]
+- use "hw3code.sml";
+[opening hw3code.sml]
+[autoloading]
+[library $SMLNJ-BASIS/basis.cm is stable]
+[library $SMLNJ-BASIS/(basis.cm):basis-common.cm is stable]
+[autoloading done]
+hw3code.sml:41.60-41.113 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         bool * (string * 'Y)
+  in expression:
+    List.filter (Char.isUpper (String.sub (<exp>,<exp>)),(x,xs'))
+hw3code.sml:41.26-41.113 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> 'Y list
+  this rule: string * 'X -> _
+  in rule:
+    (x,xs') => List.filter (Char.isUpper (String.sub <exp>),(x,xs'))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.25-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (string -> bool) * 'Y
+  in expression:
+    List.filter ((fn s => Char.isUpper <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.25-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (string -> bool) * 'Y
+  in expression:
+    List.filter ((fn s => Char.isUpper <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.69 Error: unbound variable or constructor: s
+hw3code.sml:41.36-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char
+  operand:         'Z -> char
+  in expression:
+    Char.isUpper (fn y => String.sub (<exp>,<exp>))
+hw3code.sml:41.25-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         _ * 'Y
+  in expression:
+    List.filter (Char.isUpper (fn <pat> => <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.36-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char
+  operand:         string -> char
+  in expression:
+    Char.isUpper (fn s => String.sub (<exp>,<exp>))
+hw3code.sml:41.25-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         _ * 'Y
+  in expression:
+    List.filter (Char.isUpper (fn <pat> => <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.23-41.61 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char
+  operand:         string -> char
+  in expression:
+    Char.isUpper (fn s => String.sub (<exp>,<exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string -> bool
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.61 Error: unbound variable or constructor: s
+hw3code.sml:41.25-41.73 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         bool * 'Y
+  in expression:
+    List.filter (Char.isUpper (String.sub (<exp>,<exp>)),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.25-41.81 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (string -> bool) * 'Y
+  in expression:
+    List.filter ((fn s => Char.isUpper <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.25-41.83 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (string -> bool) * 'Y
+  in expression:
+    List.filter ((fn s => Char.isUpper <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:41.41-41.97 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (string -> bool) * string list
+  in expression:
+    List.filter ((fn s => Char.isUpper <exp>),los)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:47.29-47.74 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: int * int
+  operand:         int * ('Z -> 'Y list -> 'Z)
+  in expression:
+    String.size x > foldl (longest_string1 xs')
+hw3code.sml:44.5-47.82 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  string
+  result type:  'Z * 'Y -> 'Y
+  in declaration:
+    longest_string1 =
+      (fn los =>
+            (case los
+              of <pat> => <exp>
+               | <pat> => <exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:53.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:52.111-52.114 Error: unbound variable or constructor: los
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:52.5-52.110 Warning: type vars not generalized because of
+   value restriction are instantiated to dummy types (X1,X2,...)
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn
+  : ('a * string -> string) -> 'b -> 'a list -> string
+val longest_string3 = fn : ?.X1 -> string list -> string
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+hw3test.sml:19.5-19.51 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: nil)
+hw3test.sml:20.5-20.58 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: <exp> :: <exp>)
+hw3test.sml:21.5-21.60 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: <exp> :: <exp>)
+hw3test.sml:23.14-23.29 Error: unbound variable or constructor: longest_string4
+hw3test.sml:24.15-24.30 Error: unbound variable or constructor: longest_string4
+hw3test.sml:25.15-25.30 Error: unbound variable or constructor: longest_string4
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+hw3test.sml:19.5-19.51 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: nil)
+hw3test.sml:20.5-20.58 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: <exp> :: <exp>)
+hw3test.sml:21.5-21.60 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: ?.X1
+  operand:         string list
+  in expression:
+    longest_string3 ("A" :: "bc" :: "C" :: <exp> :: <exp>)
+hw3test.sml:23.14-23.29 Error: unbound variable or constructor: longest_string4
+hw3test.sml:24.15-24.30 Error: unbound variable or constructor: longest_string4
+hw3test.sml:25.15-25.30 Error: unbound variable or constructor: longest_string4
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+hw3test.sml:27.13-27.32 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:28.15-28.34 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:29.15-29.34 Error: unbound variable or constructor: longest_capitalized
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+hw3test.sml:27.13-27.32 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:28.15-28.34 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:29.15-29.34 Error: unbound variable or constructor: longest_capitalized
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+hw3test.sml:27.13-27.32 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:28.15-28.34 Error: unbound variable or constructor: longest_capitalized
+hw3test.sml:29.15-29.34 Error: unbound variable or constructor: longest_capitalized
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val it = () : unit
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val it = () : unit
+- STRING.implode "abcde";
+stdIn:31.1-31.15 Error: unbound structure: STRING in path STRING.implode
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : char list -> string
+val it = () : unit
+hw3test.sml:33.5-33.37 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list
+  operand:         string
+  in expression:
+    rev_string "abc"
+hw3test.sml:34.5-34.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list
+  operand:         string
+  in expression:
+    rev_string ""
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> char list
+val it = () : unit
+hw3test.sml:33.5-33.37 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "abc" = "cba"
+hw3test.sml:34.5-34.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "" = ""
+val it = () : unit
+- explode "abcde";
+val it = [#"a",#"b",#"c",#"d",#"e"] : char list
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:58.5-58.62 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (char list -> string) * (string -> char list)
+  operand:         (char list -> string) * (string -> string)
+  in expression:
+    String.implode o String.rev
+val it = () : unit
+hw3test.sml:33.5-33.37 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "abc" = "cba"
+hw3test.sml:34.5-34.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "" = ""
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:58.5-58.62 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (char list -> string) * (string -> char list)
+  operand:         (char list -> string) * (string -> string)
+  in expression:
+    String.implode o String.rev
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> char list
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> char list
+val it = () : unit
+hw3test.sml:33.5-33.37 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "abc" = "cba"
+hw3test.sml:34.5-34.33 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: char list * char list
+  operand:         char list * string
+  in expression:
+    rev_string "" = ""
+val it = () : unit
+- rev_string "abcde";
+val it = [#"a",#"b",#"c",#"d",#"e"] : char list
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:58.5-58.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (string -> string) * (string -> string)
+  operand:         (string -> string) * (string -> char list)
+  in expression:
+    String.rev o String.explode
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> char list
+val it = () : unit
+- rev_string "abcde";
+val it = [#"e",#"d",#"c",#"b",#"a"] : char list
+- 
+- 
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val it = () : unit
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val it = () : unit
+- 
