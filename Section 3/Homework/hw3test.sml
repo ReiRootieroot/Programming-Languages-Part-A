@@ -32,7 +32,7 @@ val test502 = longest_capitalized ["ab", "a", "b"] = ""
 
 val test6 = rev_string "abc" = "cba"
 val test601 = rev_string "" = ""
-(*
+
 val test7 = first_answer (fn x => if x > 3 then SOME x else NONE) [1,2,3,4,5] = 4
 val test701 = first_answer (fn x => if x > 3 then SOME x else NONE) [4,2,3,5] = 4
 val test702 = (first_answer (fn x => if x > 3 then SOME x else NONE) [1,2,3] ; false) handle NoAnswer => true
@@ -59,7 +59,7 @@ val test9b03 = count_wild_and_variable_lengths (TupleP [Wildcard, Variable "str"
 val test9b04 = count_wild_and_variable_lengths (TupleP [Wildcard, Variable "str", Wildcard, Variable "str2"]) = 9
 val test9b05 = count_wild_and_variable_lengths (ConstructorP("pattern", (TupleP [Wildcard, ConstP 12, Wildcard]))) = 2
 val test9b06 = count_wild_and_variable_lengths (ConstructorP("pattern", (TupleP [Wildcard, Variable "str", Wildcard]))) = 5
-
+(*
 val test9c = count_some_var ("x", Variable("x")) = 1
 val test9c01 = count_some_var ("x", (TupleP [Wildcard, ConstP 12, Wildcard])) = 0
 val test9c02 = count_some_var ("x", (TupleP [Wildcard, Variable "str", Wildcard])) = 0

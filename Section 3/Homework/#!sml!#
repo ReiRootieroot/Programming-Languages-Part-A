@@ -703,4 +703,1519 @@ val test502 = true : bool
 val test6 = true : bool
 val test601 = true : bool
 val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:61.20-61.22 Error: syntax error: replacing  DARROW with  EQUALOP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : (exn -> bool) -> exn list -> exn
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : (exn -> bool) -> exn list -> exn
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:38.16-38.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:39.17-39.78 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:62.5-66.32 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> exn
+  this rule: 'Z list -> 'Z option
+  in rule:
+    :: (x,xs') => if f x then SOME x else (first_answer f) xs'
+hw3code.sml:62.5-66.32 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: bool
+  in expression:
+    (case (f lot)
+      of nil => NoAnswer
+       | :: (x,xs') => if f x then SOME x else (first_answer <exp>) xs')
+hw3code.sml:61.5-66.32 Error: right-hand-side of clause doesn't agree with function result type [circularity]
+  expression:  'Z -> _
+  result type:  'Z list -> 'Z option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:65.6-65.10 Error: data constructor SOME used without argument in pattern
+hw3code.sml:62.5-66.32 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> exn
+  this rule: 'Z list -> 'Z option
+  in rule:
+    :: (x,xs') =>
+      (case (f x)
+        of _ => SOME x
+         | NONE => (first_answer <exp>) xs')
+hw3code.sml:62.5-66.32 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of _ => SOME <exp>
+              | NONE => <exp> <exp>))
+hw3code.sml:61.5-66.32 Error: right-hand-side of clause doesn't agree with function result type [circularity]
+  expression:  'Z -> _
+  result type:  'Z list -> 'Z option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:38.16-38.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:39.17-39.78 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:65.6-65.10 Error: data constructor SOME used without argument in pattern
+hw3code.sml:62.5-66.32 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => raise NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of _ => SOME <exp>
+              | NONE => <exp> <exp>))
+hw3code.sml:61.5-66.32 Error: right-hand-side of clause doesn't agree with function result type [circularity]
+  expression:  'Z -> _
+  result type:  'Z list -> 'Z option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:38.16-38.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:39.17-39.78 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:62.5-66.32 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => raise NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of SOME <pat> => SOME <exp>
+              | NONE => <exp> <exp>))
+hw3code.sml:61.5-66.32 Error: right-hand-side of clause doesn't agree with function result type [circularity]
+  expression:  'Z -> _
+  result type:  'Z list -> 'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:38.16-38.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:39.17-39.78 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:62.5-66.32 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => raise NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of SOME <pat> => SOME <exp>
+              | NONE => <exp> <exp>))
+hw3code.sml:61.5-66.32 Error: right-hand-side of clause doesn't agree with function result type [circularity]
+  expression:  'Z -> _
+  result type:  'Z list -> 'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:62.5-66.35 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => raise NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of SOME <pat> => SOME <exp>
+              | NONE => first_answer <exp>))
+hw3code.sml:61.5-66.35 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: ('Z -> 'Y option) * 'Z
+  object: (('Z -> 'Y option) * 'Z list) * 'X
+  in expression:
+    (case (arg,arg)
+      of (f,lot) =>
+           (case (f lot)
+             of nil => raise <exp>
+              | :: <pat> =>
+                  (case <exp>
+                    of <rule>
+                     | <rule>)))
+hw3code.sml:61.5-66.35 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z -> _
+  result type:  'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:62.5-66.37 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: 'Z list
+  object: 'Y option
+  in expression:
+    (case (f lot)
+      of nil => raise NoAnswer
+       | :: (x,xs') =>
+           (case (f x)
+             of SOME <pat> => SOME <exp>
+              | NONE => first_answer <exp>))
+hw3code.sml:61.5-66.37 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: ('Z -> 'Y option) * 'Z
+  object: (('Z -> 'Y option) * 'Z list) * 'X
+  in expression:
+    (case (arg,arg)
+      of (f,lot) =>
+           (case (f lot)
+             of nil => raise <exp>
+              | :: <pat> =>
+                  (case <exp>
+                    of <rule>
+                     | <rule>)))
+hw3code.sml:61.5-66.37 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z -> _
+  result type:  'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:61.5-66.37 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: ('Z -> 'Y option) * 'Z list
+  object: (('Z -> 'Y option) * 'Z list) * 'X
+  in expression:
+    (case (arg,arg)
+      of (f,lot) =>
+           (case lot
+             of nil => raise <exp>
+              | :: <pat> =>
+                  (case <exp>
+                    of <rule>
+                     | <rule>)))
+hw3code.sml:61.5-66.37 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z -> _
+  result type:  'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:61.5-66.37 Error: case object and rules don't agree [tycon mismatch]
+  rule domain: ('Z -> 'Y option) * 'Z list
+  object: (('Z -> 'Y option) * 'Z list) * 'X
+  in expression:
+    (case (arg,arg)
+      of (f,lot) =>
+           (case lot
+             of nil => raise <exp>
+              | :: <pat> =>
+                  (case <exp>
+                    of <rule>
+                     | <rule>)))
+hw3code.sml:61.5-66.37 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z -> _
+  result type:  'Y option
+  in declaration:
+    first_answer = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:38.16-38.77 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:39.17-39.78 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: exn -> bool
+  operand:         [> ty] -> [> ty] option
+  in expression:
+    first_answer (fn x => if <exp> > <exp> then SOME <exp> else NONE)
+val it = () : unit
+- use "hw3code.sml"l
+= ;
+stdIn:56.18 Error: unbound variable or constructor: l
+stdIn:56.1-56.19 Error: operator is not a function [tycon mismatch]
+  operator: unit
+  in expression:
+    (use "hw3code.sml") <errorvar>
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b option
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b option
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b option
+val it = () : unit
+hw3test.sml:36.5-36.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: [> ty] option * [> ty] option
+  operand:         [> ty] option * [int ty]
+  in expression:
+    (first_answer (fn <pat> => <exp>)) (1 :: 2 :: <exp> :: <exp>) = 4
+hw3test.sml:37.5-37.82 Error: operator and operand don't agree [overload conflict]
+  operator domain: [> ty] option * [> ty] option
+  operand:         [> ty] option * [int ty]
+  in expression:
+    (first_answer (fn <pat> => <exp>)) (4 :: 2 :: <exp> :: <exp>) = 4
+hw3test.sml:40.5-40.84 Error: operator and operand don't agree [overload conflict]
+  operator domain: [> ty] option * [> ty] option
+  operand:         [> ty] option * [int ty]
+  in expression:
+    (first_answer (fn <pat> => <exp>)) (1 :: 2 :: <exp> :: <exp>) = 4
+val it = () : unit
+- first_answer (fn x => if x > 3 then SOME x else NONE) [1,2,3,4,5];
+val it = SOME 4 : int option
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val it = () : unit
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val test7 = true : bool
+val test701 = true : bool
+val test702 = true : bool
+val test7022 = true : bool
+val test703 = true : bool
+val it = () : unit
+- use "hw3code.sml"l
+=;
+stdIn:63.18 Error: unbound variable or constructor: l
+stdIn:63.1-63.19 Error: operator is not a function [tycon mismatch]
+  operator: unit
+  in expression:
+    (use "hw3code.sml") <errorvar>
+- use "hw3code.sml"l
+= ;
+stdIn:1.19 Error: unbound variable or constructor: l
+stdIn:1.2-1.20 Error: operator is not a function [tycon mismatch]
+  operator: unit
+  in expression:
+    (use "hw3code.sml") <errorvar>
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:72.6-76.24 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> 'Y option list
+  this rule: 'Z list -> 'X option
+  in rule:
+    :: (x,xs') =>
+      (case (f x)
+        of SOME v => (<exp> <exp>) (<exp> @ <exp>)
+         | NONE => NONE)
+hw3code.sml:71.6-76.24 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z list -> 'Y option list -> 'Y option list
+  result type:  'Z list -> 'Y option list -> 'X option
+  in declaration:
+    create_list = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+hw3code.sml:72.6-76.24 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> 'Y option list
+  this rule: 'Z list -> 'X option
+  in rule:
+    :: (x,xs') =>
+      (case (f x)
+        of SOME v => (create_list <exp>) (<exp> @ <exp>)
+         | NONE => NONE)
+hw3code.sml:71.6-76.24 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z option list -> 'Z option list
+  result type:  'Z option list -> 'Y option
+  in declaration:
+    create_list = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+hw3test.sml:42.13-42.24 Error: unbound variable or constructor: all_answers
+hw3test.sml:43.15-43.26 Error: unbound variable or constructor: all_answers
+hw3test.sml:44.15-44.26 Error: unbound variable or constructor: all_answers
+hw3test.sml:45.15-45.26 Error: unbound variable or constructor: all_answers
+hw3test.sml:46.15-46.26 Error: unbound variable or constructor: all_answers
+hw3test.sml:47.15-47.26 Error: unbound variable or constructor: all_answers
+hw3test.sml:48.15-48.26 Error: unbound variable or constructor: all_answers
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:72.6-76.24 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): 'Z list -> 'Y option list
+  this rule: 'Z list -> 'X option
+  in rule:
+    :: (x,xs') =>
+      (case (f x)
+        of SOME v => (create_list <exp>) (<exp> @ <exp>)
+         | NONE => NONE)
+hw3code.sml:71.6-76.24 Error: right-hand-side of clause doesn't agree with function result type [tycon mismatch]
+  expression:  'Z option list -> 'Z option list
+  result type:  'Z option list -> 'Y option
+  in declaration:
+    create_list = (fn arg => (fn <pat> => <exp>))
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+hw3test.sml:45.5-45.102 Error: operator and operand don't agree [overload conflict]
+  operator domain: [mod ty] list option list option * 
+                   [mod ty] list option list option
+  operand:         [mod ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 4 :: <exp> :: <exp>)
+hw3test.sml:46.5-46.117 Error: operator and operand don't agree [overload conflict]
+  operator domain: [+ ty] list option list option * 
+                   [+ ty] list option list option
+  operand:         [+ ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 3 :: <exp> :: <exp>)
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+hw3test.sml:45.5-45.102 Error: operator and operand don't agree [overload conflict]
+  operator domain: [mod ty] list option list option * 
+                   [mod ty] list option list option
+  operand:         [mod ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 4 :: <exp> :: <exp>)
+hw3test.sml:46.5-46.117 Error: operator and operand don't agree [overload conflict]
+  operator domain: [+ ty] list option list option * 
+                   [+ ty] list option list option
+  operand:         [+ ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 3 :: <exp> :: <exp>)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+- use"hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+hw3test.sml:45.5-45.102 Error: operator and operand don't agree [overload conflict]
+  operator domain: [mod ty] list option list option * 
+                   [mod ty] list option list option
+  operand:         [mod ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 4 :: <exp> :: <exp>)
+hw3test.sml:46.5-46.117 Error: operator and operand don't agree [overload conflict]
+  operator domain: [+ ty] list option list option * 
+                   [+ ty] list option list option
+  operand:         [+ ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 3 :: <exp> :: <exp>)
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b option) -> 'a list -> 'b option list option
+val it = () : unit
+hw3test.sml:45.5-45.102 Error: operator and operand don't agree [overload conflict]
+  operator domain: [mod ty] list option list option * 
+                   [mod ty] list option list option
+  operand:         [mod ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 4 :: <exp> :: <exp>)
+hw3test.sml:46.5-46.117 Error: operator and operand don't agree [overload conflict]
+  operator domain: [+ ty] list option list option * 
+                   [+ ty] list option list option
+  operand:         [+ ty] list option list option * [int ty] list option
+  in expression:
+    (all_answers (fn <pat> => <exp>)) (2 :: 4 :: <exp> :: <exp>) =
+      SOME (2 :: 3 :: <exp> :: <exp>)
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+val it = () : unit
+hw3test.sml:47.85 Warning: calling polyEqual
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val test7 = true : bool
+val test701 = true : bool
+val test702 = true : bool
+val test7022 = true : bool
+val test703 = true : bool
+val test8 = true : bool
+val test801 = true : bool
+val test802 = true : bool
+val test803 = true : bool
+val test804 = true : bool
+val test805 = true : bool
+val test806 = true : bool
+val it = () : unit
+- use "hw3";
+[opening hw3]
+[use failed: Io: openIn failed on "hw3", Win32TextPrimIO:openRd: failed]
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:85.5-85.52 Error: operator and operand don't agree [overload conflict]
+  operator domain: unit -> int
+  operand:         [+ ty] -> [+ ty]
+  in expression:
+    g (fn x => x + 1)
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val it = () : unit
+hw3test.sml:47.85 Warning: calling polyEqual
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val test7 = true : bool
+val test701 = true : bool
+val test702 = true : bool
+val test7022 = true : bool
+val test703 = true : bool
+val test8 = true : bool
+val test801 = true : bool
+val test802 = true : bool
+val test803 = true : bool
+val test804 = true : bool
+val test805 = true : bool
+val test806 = true : bool
+val test9a = true : bool
+val test9a01 = true : bool
+val test9a02 = true : bool
+val test9a03 = true : bool
+val it = () : unit
+- use "hw3code.sml"l
+= ;
+stdIn:78.18 Error: unbound variable or constructor: l
+stdIn:78.1-78.19 Error: operator is not a function [tycon mismatch]
+  operator: unit
+  in expression:
+    (use "hw3code.sml") <errorvar>
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:89.1 Error: syntax error found at EOF
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val it = () : unit
+-  count_wildcards (TupleP [Wildcard, ConstP 12, Wildcard]);
+val it = 2 : int
+-  count_wildcards (ConstructorP("pattern", (TupleP [Wildcard, ConstP 12, Wildcard])));
+val it = 2 : int
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val wild_and_variable_lengths = fn : pattern -> int
+val it = () : unit
+-  count_wild_and_variable_lengths (Variable("a"));
+stdIn:83.2-83.33 Error: unbound variable or constructor: count_wild_and_variable_lengths
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val it = () : unit
+-  count_wild_and_variable_lengths (Variable("a"));
+val it = 1 : int
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val it = () : unit
+hw3test.sml:47.85 Warning: calling polyEqual
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val test7 = true : bool
+val test701 = true : bool
+val test702 = true : bool
+val test7022 = true : bool
+val test703 = true : bool
+val test8 = true : bool
+val test801 = true : bool
+val test802 = true : bool
+val test803 = true : bool
+val test804 = true : bool
+val test805 = true : bool
+val test806 = true : bool
+val test9a = true : bool
+val test9a01 = true : bool
+val test9a02 = true : bool
+val test9a03 = true : bool
+val test9b = true : bool
+val test9b01 = true : bool
+val test9b02 = true : bool
+val test9b03 = true : bool
+val test9b04 = true : bool
+val test9b05 = true : bool
+val test9b06 = true : bool
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:91.65 Error: syntax error: inserting  ELSE
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val count_some_var = fn : string -> pattern -> int
+val it = () : unit
+- use "hw3test.sml";
+[opening hw3test.sml]
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val count_some_var = fn : string -> pattern -> int
+val it = () : unit
+hw3test.sml:47.85 Warning: calling polyEqual
+val test1 = true : bool
+val test101 = true : bool
+val test102 = true : bool
+val test103 = true : bool
+val test2 = true : bool
+val test201 = true : bool
+val test202 = true : bool
+val test3 = true : bool
+val test301 = true : bool
+val test302 = true : bool
+val test4a = true : bool
+val test4a1 = true : bool
+val test4a2 = true : bool
+val test4b = true : bool
+val test4b1 = true : bool
+val test4b2 = true : bool
+val test5 = true : bool
+val test501 = true : bool
+val test502 = true : bool
+val test6 = true : bool
+val test601 = true : bool
+val test7 = true : bool
+val test701 = true : bool
+val test702 = true : bool
+val test7022 = true : bool
+val test703 = true : bool
+val test8 = true : bool
+val test801 = true : bool
+val test802 = true : bool
+val test803 = true : bool
+val test804 = true : bool
+val test805 = true : bool
+val test806 = true : bool
+val test9a = true : bool
+val test9a01 = true : bool
+val test9a02 = true : bool
+val test9a03 = true : bool
+val test9b = true : bool
+val test9b01 = true : bool
+val test9b02 = true : bool
+val test9b03 = true : bool
+val test9b04 = true : bool
+val test9b05 = true : bool
+val test9b06 = true : bool
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:99.8 Error: syntax error: replacing  BAR with  OP
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val count_some_var = fn : string -> pattern -> int
+val check_pat = fn : pattern -> string list
+val it = () : unit
+-  check_pat (ConstructorP("x", (TupleP [Wildcard, Variable "x", Wildcard]));
+= 
+= ;
+= );
+= 
+= 
+= 
+= 
+= 
+= 
+= 
+= )));;;;
+stdIn:89.75-92.2 Error: syntax error: deleting  SEMICOLON SEMICOLON RPAREN
+stdIn:100.1-100.4 Error: syntax error: deleting  RPAREN RPAREN RPAREN
+stdIn:100.4-100.7 Error: syntax error: deleting  SEMICOLON SEMICOLON SEMICOLON
+-  check_pat (ConstructorP("x", (TupleP [Wildcard, Variable "x", Wildcard])));
+val it = [] : string list
+- check_pat (ConstructorP("x", (TupleP [Wildcard, Variable "x", ConstructorP("y", TupleP [Variable "z"])])));
+val it = [] : string list
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val count_some_var = fn : string -> pattern -> int
+val check_pat = fn : pattern -> string list
+val it = () : unit
+- check_pat(ConstructorP("x", (TupleP [Wildcard, Variable "x", ConstructorP("y", TupleP [Variable "z"])])));
+val it = [] : string list
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:100.70 Error: unmatched close comment
+
+uncaught exception Compile [Compile: "syntax error"]
+  raised at: ../compiler/Parse/main/smlfile.sml:15.24-15.46
+             ../compiler/TopLevel/interact/evalloop.sml:42.54
+             ../compiler/TopLevel/interact/evalloop.sml:299.20-299.23
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:101.33-101.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: pattern
+  operand:         valu
+  in expression:
+    get_names pc
+hw3code.sml:98.6-102.18 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): pattern -> string list
+  this rule: valu -> _
+  in rule:
+    Constructor (_,pc) => get_names pc
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:101.32-101.45 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: pattern
+  operand:         valu
+  in expression:
+    get_names c
+hw3code.sml:98.6-102.18 Error: types of rules don't agree [tycon mismatch]
+  earlier rule(s): pattern -> string list
+  this rule: valu -> _
+  in rule:
+    Constructor (_,c) => get_names c
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+exception NoAnswer
+datatype typ
+  = Anything | Datatype of string | IntT | TupleT of typ list | UnitT
+val only_capitals = fn : string list -> string list
+val longest_string1 = fn : string list -> string
+val longest_string2 = fn : string list -> string
+val longest_string_helper = fn : ('a * string -> string) -> 'a list -> string
+val longest_string3 = fn : string list -> string
+val longest_string4 = fn : string list -> string
+val longest_capitalized = fn : string list -> string
+val rev_string = fn : string -> string
+val first_answer = fn : ('a -> 'b option) -> 'a list -> 'b
+val all_answers = fn : ('a -> 'b list option) -> 'a list -> 'b list option
+datatype pattern
+  = ConstP of int
+  | ConstructorP of string * pattern
+  | TupleP of pattern list
+  | UnitP
+  | Variable of string
+  | Wildcard
+datatype valu
+  = Const of int | Constructor of string * valu | Tuple of valu list | Unit
+val g = fn : (unit -> int) -> (string -> int) -> pattern -> int
+val count_wildcards = fn : pattern -> int
+val count_wild_and_variable_lengths = fn : pattern -> int
+val count_some_var = fn : string -> pattern -> int
+val check_pat = fn : pattern -> string list
+val it = () : unit
+- check_pat (ConstructorP("x", (TupleP [Wildcard, Variable "x", ConstructorP("y", TupleP [Variable "z"])])));
+val it = ["z","x"] : string list
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:106.25-108.30 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (''Y -> bool) * ''Y list
+  in expression:
+    List.exists ((fn y => <exp> = <exp>),xs')
+hw3code.sml:110.2-110.25 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (''Z list -> bool) * ('Y -> ''Z list)
+  operand:         (''Z list -> bool) * string list
+  in expression:
+    is_unique o get_names p
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:106.26-108.30 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (''Y -> bool) * ''Y list
+  in expression:
+    List.exists ((fn y => <exp> = <exp>),xs')
+hw3code.sml:110.2-110.25 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: (''Z list -> bool) * ('Y -> ''Z list)
+  operand:         (''Z list -> bool) * string list
+  in expression:
+    is_unique o get_names p
+val it = () : unit
+- use "hw3code.sml";
+[opening hw3code.sml]
+hw3code.sml:106.26-108.30 Error: operator and operand don't agree [tycon mismatch]
+  operator domain: 'Z -> bool
+  operand:         (''Y -> bool) * ''Y list
+  in expression:
+    List.exists ((fn y => <exp> = <exp>),xs')
+val it = () : unit
 - 
